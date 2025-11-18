@@ -88,7 +88,6 @@ export function HeroSection() {
               </div>
             </div> */}
           </div>
-
           {/* Right content - Photo */}
           <div className="relative flex justify-center lg:justify-end order-1 lg:order-2 animate-slide-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
