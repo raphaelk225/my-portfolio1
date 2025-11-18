@@ -1,7 +1,7 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 
-const sitemap = new SitemapStream({ hostname: 'https://ton-site.vercel.app' });
+const sitemap = new SitemapStream({ hostname: 'https://raphaelkouamelan-portfolio.vercel.app' });
 
 const links = [
   { url: '/', changefreq: 'monthly' },
