@@ -169,7 +169,7 @@ export function ProjectsSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-neutral-400 mb-4 text-sm sm:text-base">
             Vous voulez voir plus de projets ?
           </p>
@@ -181,7 +181,7 @@ export function ProjectsSection() {
             <Github className="w-4 h-4 mr-2" />
             Voir mon GitHub
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
