@@ -108,8 +108,8 @@ export function Footer() {
                 Contact direct
               </p>
               <a
-                href="mailto:maxime.dupont@example.com"
-                className="text-neutral-400 hover:text-primary-400 transition-colors text-sm sm:text-base inline-block break-all"
+                href="mailto:raphael.kouamelan@epitech.eu"
+                className="text-neutral-400 mr-4 hover:text-primary-400 transition-colors text-sm sm:text-base inline-block break-all"
               >
                 raphael.kouamelan@epitech.eu
               </a>
