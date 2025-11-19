@@ -77,7 +77,7 @@ const projects = [
     description:
       "Application mobile de gestion de projets avec intégration complète de l’API Trello (workspaces, boards, lists, cards, membres). Architecture modulaire, UI/UX soignée, stratégie de tests et documentation technique complète.",
     problem: "Les équipes avaient du mal à coordonner leurs tâches efficacement.",
-    task: " Implémentation d’OAuth, dashboard utilisateur.",
+    task: " Implémentation d’OAuth, Profil utilisateur.",
     image: trello,
     stack: ["React Native","OAuth2", "API Trello","Tailwind Css", "Postman", "Git/GitHub"],
     githubUrl: "#",
