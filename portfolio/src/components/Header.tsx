@@ -70,7 +70,7 @@ export function Header() {
           </div>
 
           {/* CTA Button - Desktop & Tablet */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <Button
               onClick={handleDownloadCV}
               className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all text-sm xl:text-base"
@@ -79,7 +79,7 @@ export function Header() {
               <span className="hidden lg:inline">Télécharger le CV</span>
               <span className="lg:hidden">CV</span>
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -112,16 +112,6 @@ export function Header() {
                   {link.label}
                 </a>
               ))}
-              <Button
-                onClick={() => {
-                  handleDownloadCV();
-                  setIsMenuOpen(false);
-                }}
-                className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg w-full mt-4 shadow-lg shadow-primary-500/20"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Télécharger le CV
-              </Button>
             </div>
           </div>
         </div>

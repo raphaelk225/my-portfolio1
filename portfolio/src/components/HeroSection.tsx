@@ -1,9 +1,19 @@
-import { ArrowRight, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Sparkles, Download } from "lucide-react";
 import { Button } from "./ui/button";
+
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ImagePro from "../../src/assets/photo-pro2.jpeg"
+import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL-2.pdf"
 
 export function HeroSection() {
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "CV-Raphael-Kouamelan.pdf"; 
+    link.click();
+  };
+
   return (
     <section
       id="accueil"
@@ -45,15 +55,11 @@ export function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: '0.3s' }}>
               <Button
-                onClick={() =>
-                  document
-                    .getElementById("projets")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={handleDownloadCV}
                 className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
               >
-                Voir mes projets
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                Télécharger le CV
+                <Download className="w-4 h-4 mr-2" />
               </Button>
 
               <Button
