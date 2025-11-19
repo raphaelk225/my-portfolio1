@@ -119,14 +119,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 sm:pt-8 border-t border-neutral-800">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <p className="text-neutral-500 text-center sm:text-left text-xs sm:text-sm">
               © {currentYear} Raphael Kouamelan. Tous droits
               réservés.
-            </p>
-
-            <p className="text-neutral-500 text-center sm:text-right text-xs sm:text-sm">
-              Portfolio créé avec React & Tailwind CSS
             </p>
           </div>
         </div>
