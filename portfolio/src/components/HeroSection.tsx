@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ImagePro from "../../src/assets/photo-pro2.jpeg"
-import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL-2.pdf"
+import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf"
 
 export function HeroSection() {
 
