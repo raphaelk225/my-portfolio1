@@ -43,7 +43,7 @@ const skillCategories = [
     icon: Database,
     color: "from-purple-500 to-pink-500",
     skills: [
-      { name: "MySQL", level: "Avancé" },
+      { name: "MySQL", level: "Intermédiaire" },
       { name: "MongoDB", level: "Intermédiaire" },
       { name: "Flask", level: "Débutant" },
     ],

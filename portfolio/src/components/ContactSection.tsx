@@ -1,32 +1,39 @@
-import { useState } from "react";
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, Sparkles } from "lucide-react";
+"use client"
+import { useRef, useState } from "react";
+import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Sparkles, Loader2, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner@2.0.3";
+import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validation simple
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error("Veuillez remplir tous les champs");
-      return;
-    }
-
-    // Simulation d'envoi
-    console.log("Form submitted:", formData);
-    toast.success("Message envoyé avec succès ! Je vous répondrai bientôt.");
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true);
+    emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Message envoyé avec succès ! Je vous répondrai bientôt.",{style: { background: "#16a34a", color: "#fff" }});
+          form.current.reset();
+          setIsLoading(false);
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Une erreur est survenue lors de l’envoi du message. Veuillez réessayer plus tard.", {style: { background: "#dc2626", color: "#fff" }});
+          setIsLoading(false);
+        }
+      );
   };
 
   const socialLinks = [
@@ -166,7 +173,7 @@ export function ContactSection() {
           <div className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 shadow-2xl shadow-primary-500/10 animate-slide-in" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-neutral-50 mb-6 text-xl sm:text-2xl">Envoyez-moi un message</h3>
 
-            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -177,11 +184,8 @@ export function ContactSection() {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Mickael"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
+                  placeholder="Jean Dupont"
+                  name="name"
                   className="rounded-lg bg-neutral-800/50 border-neutral-700 text-neutral-100 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-primary-500/20"
                   required
                 />
@@ -197,16 +201,29 @@ export function ContactSection() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="mickael@example.com"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  placeholder="jean.dupont@example.com"
+                  name="email"
                   className="rounded-lg bg-neutral-800/50 border-neutral-700 text-neutral-100 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-primary-500/20"
                   required
                 />
               </div>
-
+              
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-neutral-300 mb-2 text-sm sm:text-base"
+                >
+                  Objet
+                </label>
+                <Input
+                  id="text"
+                  type="text"
+                  name="title"
+                  placeholder="Ex: Demande de collaboration, Question technique..."
+                  className="rounded-lg bg-neutral-800/50 border-neutral-700 text-neutral-100 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-primary-500/20"
+                  required
+                />
+              </div>
               <div>
                 <label
                   htmlFor="message"
@@ -216,12 +233,9 @@ export function ContactSection() {
                 </label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder="Décrivez votre projet ou votre question..."
                   rows={6}
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
                   className="rounded-lg resize-none bg-neutral-800/50 border-neutral-700 text-neutral-100 placeholder:text-neutral-500 focus:border-primary-500 focus:ring-primary-500/20"
                   required
                 />
@@ -229,10 +243,19 @@ export function ContactSection() {
 
               <Button
                 type="submit"
+                disabled={isLoading}
                 className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
               >
-                <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                Envoyer le message
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Envoi en cours...
+                  </>
+                ) : (
+                  <>
+                    Envoyer le message
+                  </>
+                )}
               </Button>
             </form>
 
