@@ -2,9 +2,9 @@ import { GraduationCap, Award, Code, Heart, Sparkles } from "lucide-react";
 
 const timeline = [
   {
-    year: "En cours ( Fin en Déc.2025 )",
+    year: "Juin.2025- Déc.2025",
     title: "FORMATION DÉVELOPPEMENT FULLSTACK",
-    company: "WECODE (Coding Academy - Epitech",
+    company: "WECODE (Coding Academy - Epitech)",
     icon: Code,
   },
   {
