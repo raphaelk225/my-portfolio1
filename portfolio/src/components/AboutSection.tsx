@@ -1,6 +1,26 @@
-import { GraduationCap, Award, Code, Heart, Sparkles } from "lucide-react";
+import {
+  GraduationCap,
+  Award,
+  Code,
+  Heart,
+  Sparkles,
+  BriefcaseBusiness,
+} from "lucide-react";
 
 const timeline = [
+  {
+    year: "Déc.2025- Janv.2025",
+    title: "Développeur Frontend React (Stage)",
+    company: "BICENTS SARL",
+    icon: BriefcaseBusiness,
+    description: [
+      "Réalisation complète du site vitrine de l’entreprise à partir des maquettes Figma.",
+      "Transformation des designs en interfaces React pixel-perfect et responsive.",
+      "Implémentation de l’internationalisation (i18n) pour supporter plusieurs langues.",
+      "Développement de composants réutilisables améliorant la maintenabilité du projet.",
+      "Collaboration avec l’équipe pour garantir la cohérence UI/UX.",
+    ],
+  },
   {
     year: "Juin.2025- Déc.2025",
     title: "FORMATION DÉVELOPPEMENT FULLSTACK",
@@ -9,7 +29,8 @@ const timeline = [
   },
   {
     year: "En cours",
-    title: "LICENCE INFORMATIQUE ET SCIENCE DU NUMERIQUE(Spécialisation Base de Données)",
+    title:
+      "LICENCE INFORMATIQUE ET SCIENCE DU NUMERIQUE (Spécialisation Bases de Données)",
     company: "UNIVERSITÉ VIRTUELLE DE CÔTE D'IVOIRE",
     icon: GraduationCap,
   },
@@ -57,15 +78,20 @@ const values = [
 
 export function AboutSection() {
   return (
-    <section id="parcours" className="py-12 sm:py-16 md:py-20 bg-neutral-950 relative overflow-hidden">
+    <section
+      id="parcours"
+      className="py-12 sm:py-16 md:py-20 bg-neutral-950 relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary-600/10 rounded-full filter blur-3xl opacity-30"></div>
-      
+
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-primary-400" />
-            <span className="text-neutral-200 text-sm sm:text-base">À propos</span>
+            <span className="text-neutral-200 text-sm sm:text-base">
+              À propos
+            </span>
           </div>
           <h2 className="text-neutral-50 mb-4">Mon Parcours</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
@@ -97,8 +123,9 @@ export function AboutSection() {
               <p className="text-neutral-300 mb-4 text-sm sm:text-base">
                 En tant que développeur full-stack junior, je combine créativité
                 et rigueur technique pour créer des applications web modernes et
-                performantes. J'ai une appétence particulière pour le frontend et
-                l'expérience utilisateur, tout en maîtrisant les aspects backend.
+                performantes. J'ai une appétence particulière pour le frontend
+                et l'expérience utilisateur, tout en maîtrisant les aspects
+                backend.
               </p>
 
               {/* <p className="text-neutral-300 text-sm sm:text-base">
@@ -116,8 +143,12 @@ export function AboutSection() {
                   className="glass-effect rounded-xl p-4 sm:p-5 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10"
                 >
                   <div className="text-2xl sm:text-3xl mb-2">{value.emoji}</div>
-                  <h5 className="text-neutral-50 mb-1 text-sm sm:text-base">{value.title}</h5>
-                  <p className="text-neutral-400 text-xs sm:text-sm">{value.description}</p>
+                  <h5 className="text-neutral-50 mb-1 text-sm sm:text-base">
+                    {value.title}
+                  </h5>
+                  <p className="text-neutral-400 text-xs sm:text-sm">
+                    {value.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -148,14 +179,21 @@ export function AboutSection() {
                             <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
                           </div>
                           <div>
-                            <h4 className="text-neutral-50 text-base sm:text-lg">{item.title}</h4>
-                            <p className="text-neutral-400 text-sm">{item.company}</p>
+                            <h4 className="text-neutral-50 text-base sm:text-lg">
+                              {item.title}
+                            </h4>
+                            <p className="text-neutral-400 text-sm">
+                              {item.company}
+                            </p>
+                            <p className="text-neutral-400 text-sm">
+                              {item.description}
+                            </p>
                           </div>
                         </div>
                       </div>
-                        <span className="px-3 py-1 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg shrink-0 border border-primary-500/20 text-sm w-fit">
-                          {item.year}
-                        </span>
+                      <span className="px-3 py-1 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg shrink-0 border border-primary-500/20 text-sm w-fit">
+                        {item.year}
+                      </span>
                     </div>
                   </div>
                 );
@@ -167,25 +205,31 @@ export function AboutSection() {
         {/* Certifications */}
         <div className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 rounded-full filter blur-3xl opacity-30"></div>
-          
+
           <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 relative z-10">
             <div className="text-center">
               <Award className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-primary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">Certifications</h4>
+              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
+                Certifications
+              </h4>
               {/* <p className="text-neutral-400 text-sm sm:text-base">
                 Full-Stack Developer, JavaScript Algorithms
               </p> */}
             </div>
             <div className="text-center">
               <GraduationCap className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-secondary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">Formation</h4>
+              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
+                Formation
+              </h4>
               {/* <p className="text-neutral-400 text-sm sm:text-base">
                 École du Code, Formation intensive 6 mois
               </p> */}
             </div>
             <div className="text-center">
               <Code className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-primary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">Projets Open Source</h4>
+              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
+                Projets Open Source
+              </h4>
               {/* <p className="text-neutral-400 text-sm sm:text-base">
                 Contributions régulières sur GitHub
               </p> */}

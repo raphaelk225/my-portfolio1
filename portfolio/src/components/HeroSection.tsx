@@ -68,7 +68,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-neutral-50 animate-slide-in">
-              Otchoumou Raphael KOUAMELAN
+              Raphael KOUAMELAN
             </h1>
 
             <h3 className="gradient-text animate-slide-in" style={{ animationDelay: '0.1s' }}>
