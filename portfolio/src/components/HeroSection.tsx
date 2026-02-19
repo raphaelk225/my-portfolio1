@@ -2,15 +2,14 @@ import { ArrowRight, Mail, Sparkles, Download } from "lucide-react";
 import { Button } from "./ui/button";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import ImagePro from "../../src/assets/photo-pro2.jpeg"
-import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf"
+import ImagePro from "../../src/assets/photo-pro2.jpeg";
+import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf";
 
 export function HeroSection() {
-
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf"; 
+    link.download = "CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf";
     link.click();
   };
 
@@ -22,22 +21,31 @@ export function HeroSection() {
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary-600/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-secondary-600/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div
+          className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-secondary-600/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-400/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-glow"></div>
-        
+
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       </div>
 
-      <div className="container-custom py-12 sm:py-16 md:py-20 relative z-10">
-      <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-           {/* Right content - Photo */}
-          <div className="relative flex justify-center order-1 animate-slide-in" style={{ animationDelay: '0.2s' }}>
-          <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
+      <div className="container-custom relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          {/* Right content - Photo */}
+          <div
+            className="relative flex justify-center order-1 animate-slide-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
               {/* Decorative elements */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-3xl rotate-6 scale-105 opacity-20 blur-xl"></div>
-            <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-2xl rotate-12 opacity-30 animate-float"></div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-secondary-400 to-primary-500 rounded-2xl -rotate-12 opacity-30 animate-float" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-2xl rotate-12 opacity-30 animate-float"></div>
+              <div
+                className="absolute -bottom-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-secondary-400 to-primary-500 rounded-2xl -rotate-12 opacity-30 animate-float"
+                style={{ animationDelay: "1s" }}
+              ></div>
 
               {/* Photo */}
               <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-primary-500/20 ring-1 ring-white/10">
@@ -64,31 +72,38 @@ export function HeroSection() {
           <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mx-auto lg:mx-0">
               <Sparkles className="w-4 h-4 text-primary-400" />
-              <span className="text-neutral-200 text-sm sm:text-base">Bienvenue sur mon portfolio</span>
+              <span className="text-neutral-200 text-sm sm:text-base">
+                Bienvenue sur mon portfolio
+              </span>
             </div>
 
             <h1 className="text-neutral-50 animate-slide-in">
               Raphael KOUAMELAN
             </h1>
 
-            <h3 className="gradient-text animate-slide-in" style={{ animationDelay: '0.1s' }}>
-              Développeur Full-Stack Junior
+            <h3
+              className="gradient-text animate-slide-in"
+              style={{ animationDelay: "0.1s" }}
+            >
+              Développeur Fullstack Junior
             </h3>
 
-            <p className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in" style={{ animationDelay: '0.2s' }}>
-              Polyvalent et orienté solutions, je conçois des applications web et mobiles 
-              performantes et centrées sur l’UX. 
-              Habitué au développement d’API REST robustes, 
-              de CRUD structurés et à l’intégration OAuth / APIs tierces, 
-              j’accorde une grande importance à la cohérence des 
-              données et aux bonnes pratiques. 
-              Curieux et adaptable, j’apprends vite et je livre 
-              rapidement des fonctionnalités fiables. 
-              Je peux contribuer immédiatement à des
-               projets exigeants et en évolution rapide.
+            <p
+              className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              De l'UI au backend, je conçois des applications web et mobiles de
+              bout en bout, des API aux interfaces, avec une vraie attention à
+              la performance, à la sécurité et à l’expérience utilisateur.
+              Rigoureux dans le respect des bonnes pratiques et rapide à
+              m’adapter, je m’intègre naturellement dans des équipes qui
+              avancent vite et visent haut.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: '0.3s' }}>
+            <div
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-slide-in"
+              style={{ animationDelay: "0.3s" }}
+            >
               <Button
                 onClick={handleDownloadCV}
                 className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
