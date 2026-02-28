@@ -2,8 +2,8 @@ import { ArrowRight, Mail, Sparkles, Download } from "lucide-react";
 import { Button } from "./ui/button";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import ImagePro from "../../src/assets/photo-pro2.jpeg";
-import CV from "../../src/assets/CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf";
+import ImagePro from "../assets/photo-pro2.jpeg";
+import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-1.pdf";
 
 export function HeroSection() {
   const handleDownloadCV = () => {
