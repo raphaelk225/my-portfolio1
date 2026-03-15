@@ -8,7 +8,7 @@ import yowl from "../../src/assets/yowl.png"
 import dashboard from "../../src/assets/dashboard.png"
 import rotten from "../../src/assets/rotten.jpeg"
 import trello from "../../src/assets/Trello.png"
-
+import yobalo from "../../src/assets/yobalo.png"
 const projects = [
   {
     id: 1,
@@ -82,6 +82,18 @@ const projects = [
     stack: ["React Native","OAuth2", "API Trello","Tailwind Css", "Postman", "Git/GitHub"],
     githubUrl: "#",
     liveUrl: "#",
+  },
+  {
+    id: 7,
+    title: "Yobalo",
+    description:
+      "Yobalo est une plateforme de livraison de proximité qui met en relation les habitants d'un même quartier avec des livreurs situés à moins d'un kilomètre d'eux.",
+    problem: "Les équipes avaient du mal à coordonner leurs tâches efficacement.",
+    task: "Page client, référencement seo",
+    image: yobalo,
+    stack: ["Wordpress","React Native","React JS", "Laravel","OpenStreetMap + Nominatim", "JWT", "Git/GitHub", "MySQL"],
+    githubUrl: "#",
+    liveUrl: "https://yobalo.com/",
   },
 ];
 

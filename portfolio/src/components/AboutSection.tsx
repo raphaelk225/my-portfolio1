@@ -9,6 +9,19 @@ import {
 
 const timeline = [
   {
+    year: "Janv.2025- aujourd'hui ",
+    title: "Développeur Fullstack Junior",
+    company: "FeexPay SA",
+    icon: BriefcaseBusiness,
+    description: [
+      "Développement et maintenance d’applications web liées aux solutions de paiement.",
+      "Conception et intégration d’APIs REST pour la gestion des transactions et des services financiers.",
+      "Participation à l’amélioration des interfaces utilisateur pour les plateformes web et mobiles.",
+      "Intégration et test de fonctionnalités dans un environnement sandbox afin d’assurer la fiabilité des transactions.",
+      "Collaboration avec l’équipe produit et les autres développeurs pour livrer des fonctionnalités robustes et sécurisées.",
+    ],
+  },
+  {
     year: "Déc.2025- Janv.2025",
     title: "Développeur Frontend React (Stage)",
     company: "BICENTS SARL",
@@ -182,7 +195,7 @@ export function AboutSection() {
                             <h4 className="text-neutral-50 text-base sm:text-lg">
                               {item.title}
                             </h4>
-                            <p className="text-neutral-400 text-sm">
+                            <p className="text-neutral-400 text-sm font-semibold">
                               {item.company}
                             </p>
                             <p className="text-neutral-400 text-sm">

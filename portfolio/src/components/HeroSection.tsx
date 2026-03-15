@@ -92,12 +92,13 @@ export function HeroSection() {
               className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in"
               style={{ animationDelay: "0.2s" }}
             >
-              De l'UI au backend, je conçois des applications web et mobiles de
-              bout en bout, des API aux interfaces, avec une vraie attention à
-              la performance, à la sécurité et à l’expérience utilisateur.
-              Rigoureux dans le respect des bonnes pratiques et rapide à
-              m’adapter, je m’intègre naturellement dans des équipes qui
-              avancent vite et visent haut.
+              Développeur full-stack passionné par la fintech, je conçois des
+              solutions numériques qui simplifient les paiements et les services
+              financiers. De l’UI au backend, je développe des applications
+              performantes, des APIs robustes et des intégrations de systèmes de
+              paiement sécurisés. Attentif à la qualité du code, à la sécurité
+              et à l’expérience utilisateur, je m’intègre facilement dans des
+              équipes techniques qui construisent des produits à fort impact.
             </p>
 
             <div
