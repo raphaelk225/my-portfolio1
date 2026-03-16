@@ -36,8 +36,8 @@ const timeline = [
   },
   {
     year: "Juin.2025- Déc.2025",
-    title: "FORMATION DÉVELOPPEMENT FULLSTACK",
-    company: "WECODE (Coding Academy - Epitech)",
+    title: "Coding Academy, développement Fullstack",
+    company: "WECODE - Epitech Afrique",
     icon: Code,
   },
   {
@@ -195,7 +195,7 @@ export function AboutSection() {
                             <h4 className="text-neutral-50 text-base sm:text-lg">
                               {item.title}
                             </h4>
-                            <p className="text-neutral-400 text-sm font-semibold">
+                            <p className="">
                               {item.company}
                             </p>
                             <p className="text-neutral-400 text-sm">

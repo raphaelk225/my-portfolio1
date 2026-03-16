@@ -1,6 +1,16 @@
-"use client"
+"use client";
 import { useRef, useState } from "react";
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Sparkles, Loader2, Send } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  Sparkles,
+  Loader2,
+  Send,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -13,26 +23,33 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setIsLoading(true);
-    emailjs.sendForm(
+    emailjs
+      .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         (result) => {
           console.log(result.text);
-          toast.success("Message envoyé avec succès ! Je vous répondrai bientôt.",{style: { background: "#16a34a", color: "#fff" }});
+          toast.success(
+            "Message envoyé avec succès ! Je vous répondrai bientôt.",
+            { style: { background: "#16a34a", color: "#fff" } },
+          );
           form.current.reset();
           setIsLoading(false);
         },
         (error) => {
           console.log(error.text);
-          toast.error("Une erreur est survenue lors de l’envoi du message. Veuillez réessayer plus tard.", {style: { background: "#dc2626", color: "#fff" }});
+          toast.error(
+            "Une erreur est survenue lors de l’envoi du message. Veuillez réessayer plus tard.",
+            { style: { background: "#dc2626", color: "#fff" } },
+          );
           setIsLoading(false);
-        }
+        },
       );
   };
 
@@ -79,15 +96,20 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 bg-neutral-900 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-12 sm:py-16 md:py-20 bg-neutral-900 relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary-600/10 rounded-full filter blur-3xl opacity-30"></div>
-      
+
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-primary-400" />
-            <span className="text-neutral-200 text-sm sm:text-base">Contact</span>
+            <span className="text-neutral-200 text-sm sm:text-base">
+              Contact
+            </span>
           </div>
           <h2 className="text-neutral-50 mb-4">Discutons de votre projet</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
@@ -113,7 +135,9 @@ export function ContactSection() {
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-400" />
                     </div>
                     <div>
-                      <div className="text-neutral-500 mb-1 text-sm">{info.label}</div>
+                      <div className="text-neutral-500 mb-1 text-sm">
+                        {info.label}
+                      </div>
                       {info.link ? (
                         <a
                           href={info.link}
@@ -122,7 +146,9 @@ export function ContactSection() {
                           {info.value}
                         </a>
                       ) : (
-                        <div className="text-neutral-100 text-sm sm:text-base">{info.value}</div>
+                        <div className="text-neutral-100 text-sm sm:text-base">
+                          {info.value}
+                        </div>
                       )}
                     </div>
                   </div>
@@ -131,8 +157,13 @@ export function ContactSection() {
             </div>
 
             {/* Social Links */}
-            <div className="glass-effect rounded-xl p-5 sm:p-6 border-neutral-700/50 animate-slide-in" style={{ animationDelay: '0.3s' }}>
-              <h4 className="text-neutral-50 mb-4 text-base sm:text-lg">Retrouvez-moi sur</h4>
+            <div
+              className="glass-effect rounded-xl p-5 sm:p-6 border-neutral-700/50 animate-slide-in"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <h4 className="text-neutral-50 mb-4 text-base sm:text-lg">
+                Retrouvez-moi sur
+              </h4>
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
@@ -153,27 +184,46 @@ export function ContactSection() {
             </div>
 
             {/* Availability */}
-            <div className="relative glass-effect rounded-xl p-5 sm:p-6 border-primary-500/30 overflow-hidden card-glow animate-slide-in" style={{ animationDelay: '0.4s' }}>
+            <div
+              className="relative glass-effect rounded-xl p-5 sm:p-6 border-primary-500/30 overflow-hidden card-glow animate-slide-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/30 to-secondary-600/30 rounded-full filter blur-2xl"></div>
-              
+
               <div className="relative z-10">
-                <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">Disponibilité</h4>
+                <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
+                  Disponibilité
+                </h4>
                 <p className="text-neutral-300 mb-4 text-sm sm:text-base">
-                  Je suis actuellement disponible pour un premier stage. Temps plein ou partiel.
+                  Après des expériences en développement, notamment sur des
+                  solutions de paiement et des plateformes web, je suis
+                  actuellement disponible pour une nouvelle opportunité en
+                  développement Fullstack.{" "}
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
-                  <span className="text-green-400 text-sm sm:text-base">Disponible immédiatement</span>
+                  <span className="text-green-400 text-sm sm:text-base">
+                    Disponible immédiatement
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right - Contact Form */}
-          <div className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 shadow-2xl shadow-primary-500/10 animate-slide-in" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-neutral-50 mb-6 text-xl sm:text-2xl">Envoyez-moi un message</h3>
+          <div
+            className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 shadow-2xl shadow-primary-500/10 animate-slide-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <h3 className="text-neutral-50 mb-6 text-xl sm:text-2xl">
+              Envoyez-moi un message
+            </h3>
 
-            <form ref={form} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <form
+              ref={form}
+              onSubmit={handleSubmit}
+              className="space-y-5 sm:space-y-6"
+            >
               <div>
                 <label
                   htmlFor="name"
@@ -207,7 +257,7 @@ export function ContactSection() {
                   required
                 />
               </div>
-              
+
               <div>
                 <label
                   htmlFor="email"
@@ -252,9 +302,7 @@ export function ContactSection() {
                     Envoi en cours...
                   </>
                 ) : (
-                  <>
-                    Envoyer le message
-                  </>
+                  <>Envoyer le message</>
                 )}
               </Button>
             </form>
