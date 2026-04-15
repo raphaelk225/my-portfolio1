@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "./ui/button";
-import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-1.pdf"
+import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-2.pdf"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

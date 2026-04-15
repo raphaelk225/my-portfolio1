@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ImagePro from "../assets/photo-pro2.jpeg";
-import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-1.pdf";
+import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-2.pdf";
 
 export function HeroSection() {
   const handleDownloadCV = () => {
@@ -28,7 +28,7 @@ export function HeroSection() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-400/10 rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-glow"></div>
 
         {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -92,13 +92,15 @@ export function HeroSection() {
               className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Développeur full-stack passionné par la fintech, je conçois des
-              solutions numériques qui simplifient les paiements et les services
-              financiers. De l’UI au backend, je développe des applications
-              performantes, des APIs robustes et des intégrations de systèmes de
-              paiement sécurisés. Attentif à la qualité du code, à la sécurité
-              et à l’expérience utilisateur, je m’intègre facilement dans des
-              équipes techniques qui construisent des produits à fort impact.
+              Développeur Fullstack Junior (Next.js / React) Spécialisé dans la
+              conception d’applications web et mobile performantes et
+              évolutives. Maîtrise du front-end et du back-end avec une approche
+              orientée résultats et qualité. Polyvalent en développement backend
+              (Node.js, Python, PHP selon les besoins des projets). Intégration
+              d’outils d’IA pour optimiser le développement et automatiser les
+              workflows. Créatif, rigoureux et autonome, j’apprends rapidement
+              et m’adapte facilement à des environnements dynamiques, tout en
+              livrant des fonctionnalités fiables.
             </p>
 
             <div
@@ -107,10 +109,10 @@ export function HeroSection() {
             >
               <Button
                 onClick={handleDownloadCV}
-                className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
+                className="bg-linear-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
               >
                 Télécharger le CV
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4 ml-2" />
               </Button>
 
               <Button
