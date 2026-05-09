@@ -40,10 +40,10 @@ export function HeroSection() {
           >
             <div className="relative w-64 sm:w-72 md:w-80 lg:w-96">
               {/* Decorative elements */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-secondary-600 rounded-3xl rotate-6 scale-105 opacity-20 blur-xl"></div>
-              <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-2xl rotate-12 opacity-30 animate-float"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-primary-500 to-secondary-600 rounded-3xl rotate-6 scale-105 opacity-20 blur-xl"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 sm:w-24 sm:h-24 bg-linear-to-br from-primary-400 to-secondary-500 rounded-2xl rotate-12 opacity-30 animate-float"></div>
               <div
-                className="absolute -bottom-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-secondary-400 to-primary-500 rounded-2xl -rotate-12 opacity-30 animate-float"
+                className="absolute -bottom-4 -left-4 w-16 h-16 sm:w-20 sm:h-20 bg-linear-to-br from-secondary-400 to-primary-500 rounded-2xl -rotate-12 opacity-30 animate-float"
                 style={{ animationDelay: "1s" }}
               ></div>
 
@@ -54,7 +54,7 @@ export function HeroSection() {
                   alt="Raphael KOUAMELAN - Développeur Full-Stack"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-transparent opacity-60"></div>
               </div>
 
               {/* Floating badge */}
@@ -92,7 +92,7 @@ export function HeroSection() {
               className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Développeur Fullstack Junior (Next.js / React) Spécialisé dans la
+              Développeur Fullstack Junior (Next.js / React / NestJS) Spécialisé dans la
               conception d’applications web et mobile performantes et
               évolutives. Maîtrise du front-end et du back-end avec une approche
               orientée résultats et qualité. Polyvalent en développement backend

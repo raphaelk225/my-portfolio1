@@ -119,7 +119,7 @@ export function AboutSection() {
           <div className="space-y-6">
             <div className="glass-effect rounded-2xl p-6 sm:p-8 border-primary-500/30 card-glow">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-primary-600 to-secondary-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary-500/30">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-linear-to-br from-primary-600 to-secondary-600 flex items-center justify-center shrink-0 shadow-lg shadow-primary-500/30">
                   <Heart className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <div>
@@ -182,13 +182,13 @@ export function AboutSection() {
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 border-4 border-neutral-950 shadow-lg shadow-primary-500/50"></div>
+                    <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-linear-to-br from-primary-500 to-secondary-500 border-4 border-neutral-950 shadow-lg shadow-primary-500/50"></div>
 
                     {/* Content */}
                     <div className="glass-effect rounded-xl  p-5 sm:p-6 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center border border-primary-500/20">
+                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-linear-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center border border-primary-500/20">
                             <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
                           </div>
                           <div>
@@ -204,7 +204,7 @@ export function AboutSection() {
                           </div>
                         </div>
                       </div>
-                      <span className="px-3 py-1 bg-gradient-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg shrink-0 border border-primary-500/20 text-sm w-fit">
+                      <span className="px-3 py-1 bg-linear-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg shrink-0 border border-primary-500/20 text-sm w-fit">
                         {item.year}
                       </span>
                     </div>
@@ -217,7 +217,7 @@ export function AboutSection() {
 
         {/* Certifications */}
         <div className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 rounded-full filter blur-3xl opacity-30"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-primary-600/20 to-secondary-600/20 rounded-full filter blur-3xl opacity-30"></div>
 
           <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 relative z-10">
             <div className="text-center">

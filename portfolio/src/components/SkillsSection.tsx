@@ -141,7 +141,7 @@ export function SkillsSection() {
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div
-                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg`}
+                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br ${category.color} flex items-center justify-center shadow-lg`}
                   >
                     <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
@@ -165,7 +165,7 @@ export function SkillsSection() {
                       {/* Progress bar */}
                       <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
                         <div
-                          className={`h-full bg-gradient-to-r ${category.color} ${getLevelWidth(
+                          className={`h-full bg-linear-to-r ${category.color} ${getLevelWidth(
                             skill.level
                           )} transition-all duration-500 shadow-lg`}
                           style={{ 
