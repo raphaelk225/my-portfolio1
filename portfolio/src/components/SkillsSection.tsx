@@ -55,10 +55,11 @@ const skillCategories = [
     color: "from-orange-500 to-red-500",
     skills: [
       { name: "Git / GitHub", level: "Avancé" },
-      { name: "Docker", level: "Débutant" },
+      { name: "Docker", level: "Intermédiaire" },
       { name: "Vercel", level: "Intermédiaire" },
       { name: "Postman", level: "Avancé" },
       { name: "Linux", level: "Avancé" },
+      { name: "AWS", level: "Débutant" },
     ],
   },
   {
@@ -97,17 +98,26 @@ const getLevelColor = (level: string) => {
   }
 };
 
-const getLevelWidth = (level: string) => {
-  switch (level) {
-    case "Avancé":
-      return "w-full";
-    case "Intermédiaire":
-      return "w-2/3";
-    case "Débutant":
-      return "w-1/3";
-    default:
-      return "w-1/3";
-  }
+
+const gradientMap: Record<string, [string, string]> = {
+  "from-blue-500 to-cyan-500":     ["#3b82f6", "#06b6d4"],
+  "from-green-500 to-emerald-500": ["#22c55e", "#10b981"],
+  "from-purple-500 to-pink-500":   ["#a855f7", "#ec4899"],
+  "from-orange-500 to-red-500":    ["#f97316", "#ef4444"],
+  "from-teal-500 to-cyan-500":     ["#14b8a6", "#06b6d4"],
+  "from-violet-500 to-purple-500": ["#8b5cf6", "#a855f7"],
+};
+
+const getBarStyle = (color: string, level: string): React.CSSProperties => {
+  const [from, to] = gradientMap[color] ?? ["#6366f1", "#8b5cf6"];
+  const widthMap: Record<string, string> = {
+    "Avancé": "100%", "Intermédiaire": "66%", "Débutant": "33%",
+  };
+  return {
+    width: widthMap[level] ?? "33%",
+    background: `linear-gradient(to right, ${from}, ${to})`,
+    boxShadow: `0 0 8px ${from}80`,
+  };
 };
 
 export function SkillsSection() {
@@ -165,12 +175,8 @@ export function SkillsSection() {
                       {/* Progress bar */}
                       <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
                         <div
-                          className={`h-full bg-linear-to-r ${category.color} ${getLevelWidth(
-                            skill.level
-                          )} transition-all duration-500 shadow-lg`}
-                          style={{ 
-                            boxShadow: `0 0 10px rgba(var(--tw-gradient-from), 0.5)` 
-                          }}
+                          className="h-full rounded-full transition-all duration-500"
+                          style={getBarStyle(category.color, skill.level)}
                         ></div>
                       </div>
                     </div>

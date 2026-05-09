@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Sparkles } from "lucide-react";
+import { ExternalLink, Github, Sparkles, Lock } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -58,7 +58,6 @@ const projects = [
     githubUrl: "#",
     liveUrl: "#",
   },
-  ,
   {
     id: 5,
     title: "Dashboard - Web app type Netvibes",
@@ -167,13 +166,23 @@ export function ProjectsSection() {
 
                 {/* Actions */}
                 <div className="flex gap-3 pt-4">
-                  <Button
-                    className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg shadow-lg shadow-primary-500/20 text-sm"
-                    onClick={() => window.open(project.liveUrl, "_blank")}
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2" />
-                    Demo
-                  </Button>
+                  {project.liveUrl && project.liveUrl !== "#" ? (
+                    <Button
+                      className="flex-1 bg-linear-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 text-sm transition-all duration-300"
+                      onClick={() => window.open(project.liveUrl, "_blank")}
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      Voir le projet
+                    </Button>
+                  ) : (
+                    <Button
+                      disabled
+                      className="flex-1 rounded-lg text-sm bg-neutral-800/60 text-neutral-500 border border-neutral-700/50"
+                    >
+                      <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      Privé / En cours
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>

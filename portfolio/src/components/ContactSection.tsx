@@ -173,7 +173,7 @@ export function ContactSection() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`w-11 h-11 sm:w-12 sm:h-12 rounded-lg glass-effect border-neutral-700/50 flex items-center justify-center text-neutral-400 ${social.color} transition-all duration-300`}
+                      className={`w-11 h-11 sm:w-12 sm:h-12 rounded-lg glass-effect border-neutral-700/50 flex items-center justify-center text-neutral-400 ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg`}
                       aria-label={social.name}
                     >
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -302,7 +302,10 @@ export function ContactSection() {
                     Envoi en cours...
                   </>
                 ) : (
-                  <>Envoyer le message</>
+                  <>
+                    <Send className="w-4 h-4 mr-2" />
+                    Envoyer le message
+                  </>
                 )}
               </Button>
             </form>

@@ -94,7 +94,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg glass-effect border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-primary-500/50 hover:bg-primary-600/20 transition-all"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg glass-effect border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-white hover:border-primary-500/50 hover:bg-primary-600/20 hover:scale-110 transition-all duration-300"
                     aria-label={social.label}
                   >
                     <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
