@@ -1,6 +1,7 @@
 import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
+import { RealisationsSection } from "./components/RealisationsSection";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { SkillsSection } from "./components/SkillsSection";
 import { AboutSection } from "./components/AboutSection";
@@ -9,10 +10,11 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen">
       <Header />
       <main>
         <HeroSection />
+        <RealisationsSection />
         <ProjectsSection />
         <SkillsSection />
         <AboutSection />

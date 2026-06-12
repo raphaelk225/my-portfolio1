@@ -6,6 +6,7 @@ import {
   Smartphone,
   Palette,
   Sparkles,
+  CreditCard,
 } from "lucide-react";
 
 const skillCategories = [
@@ -33,7 +34,6 @@ const skillCategories = [
       { name: "NestJS", level: "Intermédiaire" },
       { name: "PHP", level: "Intermédiaire" },
       { name: "Laravel", level: "Intermédiaire" },
-      { name: "REST API", level: "Avancé" },
       { name: "Python", level: "Débutant" },
     ],
   },
@@ -43,13 +43,27 @@ const skillCategories = [
     icon: Database,
     color: "from-purple-500 to-pink-500",
     skills: [
+      { name: "PostgreSQL", level: "Intermédiaire" },
       { name: "MySQL", level: "Intermédiaire" },
       { name: "MongoDB", level: "Intermédiaire" },
-      { name: "Flask", level: "Débutant" },
+      { name: "TypeORM", level: "Intermédiaire" },
     ],
   },
   {
     id: 4,
+    title: "APIs & Paiement",
+    icon: CreditCard,
+    color: "from-rose-500 to-orange-500",
+    skills: [
+      { name: "REST API", level: "Avancé" },
+      { name: "Webhooks / Callbacks", level: "Intermédiaire" },
+      { name: "Mobile Money (MTN, Moov, Orange, Wave)", level: "Intermédiaire" },
+      { name: "Postman", level: "Avancé" },
+      { name: "Swagger", level: "Intermédiaire" },
+    ],
+  },
+  {
+    id: 5,
     title: "Outils & DevOps",
     icon: Wrench,
     color: "from-orange-500 to-red-500",
@@ -57,13 +71,11 @@ const skillCategories = [
       { name: "Git / GitHub", level: "Avancé" },
       { name: "Docker", level: "Intermédiaire" },
       { name: "Vercel", level: "Intermédiaire" },
-      { name: "Postman", level: "Avancé" },
       { name: "Linux", level: "Avancé" },
-      { name: "AWS", level: "Débutant" },
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "Mobile",
     icon: Smartphone,
     color: "from-teal-500 to-cyan-500",
@@ -73,14 +85,13 @@ const skillCategories = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Design & UI/UX",
     icon: Palette,
     color: "from-violet-500 to-purple-500",
     skills: [
       { name: "Figma", level: "Intermédiaire" },
       { name: "UI Design", level: "Intermédiaire" },
-      { name: "Adobe XD", level: "Débutant" },
     ],
   },
 ];
@@ -98,11 +109,11 @@ const getLevelColor = (level: string) => {
   }
 };
 
-
 const gradientMap: Record<string, [string, string]> = {
   "from-blue-500 to-cyan-500":     ["#3b82f6", "#06b6d4"],
   "from-green-500 to-emerald-500": ["#22c55e", "#10b981"],
   "from-purple-500 to-pink-500":   ["#a855f7", "#ec4899"],
+  "from-rose-500 to-orange-500":   ["#f43f5e", "#f97316"],
   "from-orange-500 to-red-500":    ["#f97316", "#ef4444"],
   "from-teal-500 to-cyan-500":     ["#14b8a6", "#06b6d4"],
   "from-violet-500 to-purple-500": ["#8b5cf6", "#a855f7"],
@@ -123,9 +134,8 @@ const getBarStyle = (color: string, level: string): React.CSSProperties => {
 export function SkillsSection() {
   return (
     <section id="competences" className="py-12 sm:py-16 md:py-20 bg-neutral-900 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-600/10 rounded-full filter blur-3xl opacity-30"></div>
-      
+
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mb-4">
@@ -148,7 +158,6 @@ export function SkillsSection() {
                 className="glass-effect rounded-2xl p-5 sm:p-6 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 animate-slide-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6">
                   <div
                     className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-linear-to-br ${category.color} flex items-center justify-center shadow-lg`}
@@ -158,21 +167,17 @@ export function SkillsSection() {
                   <h3 className="text-neutral-50 text-lg sm:text-xl">{category.title}</h3>
                 </div>
 
-                {/* Skills List */}
                 <div className="space-y-4">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex} className="space-y-2">
                       <div className="flex items-center justify-between gap-2">
                         <span className="text-neutral-300 text-sm sm:text-base">{skill.name}</span>
                         <span
-                          className={`px-2 py-0.5 sm:py-1 rounded-md border text-xs ${getLevelColor(
-                            skill.level
-                          )}`}
+                          className={`px-2 py-0.5 sm:py-1 rounded-md border text-xs ${getLevelColor(skill.level)}`}
                         >
                           {skill.level}
                         </span>
                       </div>
-                      {/* Progress bar */}
                       <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all duration-500"
@@ -187,7 +192,6 @@ export function SkillsSection() {
           })}
         </div>
 
-        {/* Additional Info */}
         <div className="mt-12 sm:mt-16 glass-effect rounded-2xl p-6 sm:p-8 border-primary-500/30 card-glow">
           <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 text-center">
             <div className="space-y-2">

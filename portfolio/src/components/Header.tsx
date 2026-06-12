@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
-import { Button } from "./ui/button";
-import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-2.pdf"
+import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,25 +9,18 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
     { href: "#accueil", label: "Accueil" },
+    { href: "#realisations", label: "Réalisations" },
     { href: "#projets", label: "Projets" },
     { href: "#competences", label: "Compétences" },
     { href: "#parcours", label: "Parcours" },
     { href: "#contact", label: "Contact" },
   ];
-
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = CV;
-    link.download = "CV-Raphael-Kouamelan.pdf"; 
-    link.click();
-  };
 
   return (
     <header
@@ -47,8 +38,8 @@ export function Header() {
             className="flex items-center gap-2 sm:gap-3 group"
             onClick={() => setIsMenuOpen(false)}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600 flex items-center justify-center text-white transition-transform group-hover:scale-110 shadow-lg shadow-primary-500/30">
-              <span className="text-sm sm:text-base ">RK</span>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-linear-to-br from-primary-500 via-secondary-500 to-primary-600 flex items-center justify-center text-white transition-transform group-hover:scale-110 shadow-lg shadow-primary-500/30">
+              <span className="text-sm sm:text-base font-semibold">RK</span>
             </div>
             <span className="hidden sm:block text-neutral-50">
               Raphael Kouamelan
@@ -64,22 +55,10 @@ export function Header() {
                 className="text-neutral-300 hover:text-primary-400 transition-colors text-sm xl:text-base relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary-400 to-secondary-400 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-primary-400 to-secondary-400 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
-
-          {/* CTA Button - Desktop & Tablet */}
-          {/* <div className="hidden md:block">
-            <Button
-              onClick={handleDownloadCV}
-              className="bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all text-sm xl:text-base"
-            >
-              <Download className="w-3.5 h-3.5 xl:w-4 xl:h-4 mr-2" />
-              <span className="hidden lg:inline">Télécharger le CV</span>
-              <span className="lg:hidden">CV</span>
-            </Button>
-          </div> */}
 
           {/* Mobile Menu Button */}
           <button

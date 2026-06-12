@@ -1,91 +1,84 @@
 import {
   GraduationCap,
-  Award,
   Code,
   Heart,
   Sparkles,
   BriefcaseBusiness,
+  Link2,
+  Shield,
+  BookOpen,
+  Users,
 } from "lucide-react";
 
 const timeline = [
   {
-    year: "Janv.2025- aujourd'hui ",
+    year: "Janv. 2025 – Aujourd'hui",
     title: "Développeur Fullstack Junior",
     company: "FeexPay SA",
     icon: BriefcaseBusiness,
     description: [
-      "Développement et maintenance d’applications web liées aux solutions de paiement.",
-      "Conception et intégration d’APIs REST pour la gestion des transactions et des services financiers.",
-      "Participation à l’amélioration des interfaces utilisateur pour les plateformes web et mobiles.",
-      "Intégration et test de fonctionnalités dans un environnement sandbox afin d’assurer la fiabilité des transactions.",
-      "Collaboration avec l’équipe produit et les autres développeurs pour livrer des fonctionnalités robustes et sécurisées.",
+      "Refactorisation du Dashboard Marchand : migration Nuxt.js → Next.js (TypeScript, Tailwind CSS).",
+      "Développement du SDK React FeexPay v2 pour l'intégration des solutions de paiement.",
+      "Intégration API Moov Africa (PayIn/PayOut) : webhooks, gestion des statuts, retry automatique.",
+      "Système QuickLink QR Code pour liens de paiement partageables.",
+      "Support technique marchands via WhatsApp, Telegram et sessions live.",
     ],
   },
   {
-    year: "Déc.2025- Janv.2025",
+    year: "Déc. 2024 – Janv. 2025",
     title: "Développeur Frontend React (Stage)",
     company: "BICENTS SARL",
     icon: BriefcaseBusiness,
     description: [
-      "Réalisation complète du site vitrine de l’entreprise à partir des maquettes Figma.",
-      "Transformation des designs en interfaces React pixel-perfect et responsive.",
-      "Implémentation de l’internationalisation (i18n) pour supporter plusieurs langues.",
-      "Développement de composants réutilisables améliorant la maintenabilité du projet.",
-      "Collaboration avec l’équipe pour garantir la cohérence UI/UX.",
+      "Réalisation complète du site vitrine à partir des maquettes Figma.",
+      "Interfaces React pixel-perfect et responsive.",
+      "Internationalisation (i18n) multilingue.",
+      "Composants réutilisables et cohérence UI/UX.",
     ],
   },
   {
-    year: "Juin.2025- Déc.2025",
-    title: "Coding Academy, développement Fullstack",
-    company: "WECODE - Epitech Afrique",
+    year: "Juin 2025 – Déc. 2025 (en cours)",
+    title: "Coding Academy — Développement Fullstack",
+    company: "WeCode · Epitech Afrique",
     icon: Code,
+    description: [],
   },
   {
-    year: "En cours",
-    title:
-      "LICENCE INFORMATIQUE ET SCIENCE DU NUMERIQUE (Spécialisation Bases de Données)",
-    company: "UNIVERSITÉ VIRTUELLE DE CÔTE D'IVOIRE",
+    year: "2023 – En cours",
+    title: "Licence Informatique & Science du Numérique (Spécialisation Bases de Données)",
+    company: "Université Virtuelle de Côte d'Ivoire (UVCI)",
     icon: GraduationCap,
+    description: [],
   },
   {
-    year: "2022-2023",
-    title: "BACCALAURÉAT SERIE D",
-    company: "LYCÉE MODERNE DE PORT-BOUET",
+    year: "2022 – 2023",
+    title: "Baccalauréat Série D",
+    company: "Lycée Moderne de Port-Bouet",
     icon: GraduationCap,
+    description: [],
   },
-  // {
-  //   year: "2022",
-  //   title: "Certification Full-Stack",
-  //   company: "FreeCodeCamp",
-  //   description:
-  //     "Obtention de la certification Full-Stack Developer avec projets finaux validés.",
-  //   icon: Award,
-  // },
 ];
 
 const values = [
   {
-    title: "Code propre",
-    description: "J'écris du code lisible, maintenable et bien documenté.",
-    emoji: "✨",
+    title: "APIs & Intégration",
+    description: "Conception et intégration d'APIs de paiement en production réelle.",
+    Icon: Link2,
+  },
+  {
+    title: "Sécurité & Fiabilité",
+    description: "Application des bonnes pratiques de sécurité applicative et d'intégrité des données.",
+    Icon: Shield,
   },
   {
     title: "Apprentissage continu",
-    description:
-      "Je me forme constamment aux nouvelles technologies et best practices.",
-    emoji: "📚",
+    description: "Formation permanente aux nouvelles technologies et au secteur fintech.",
+    Icon: BookOpen,
   },
   {
-    title: "Esprit d'équipe",
-    description:
-      "Je collabore efficacement et partage mes connaissances avec mes pairs.",
-    emoji: "🤝",
-  },
-  {
-    title: "Résolution de problèmes",
-    description:
-      "J'aime analyser les défis et trouver des solutions créatives et efficaces.",
-    emoji: "🎯",
+    title: "Collaboration",
+    description: "Travail en équipe distribuée, support technique et documentation.",
+    Icon: Users,
   },
 ];
 
@@ -95,16 +88,13 @@ export function AboutSection() {
       id="parcours"
       className="py-12 sm:py-16 md:py-20 bg-neutral-950 relative overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary-600/10 rounded-full filter blur-3xl opacity-30"></div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-primary-400" />
-            <span className="text-neutral-200 text-sm sm:text-base">
-              À propos
-            </span>
+            <span className="text-neutral-200 text-sm sm:text-base">À propos</span>
           </div>
           <h2 className="text-neutral-50 mb-4">Mon Parcours</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
@@ -113,9 +103,8 @@ export function AboutSection() {
           </p>
         </div>
 
-        {/* About Content */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mb-16 sm:mb-20">
-          {/* Left - Photo and intro */}
+          {/* Left - Intro + values */}
           <div className="space-y-6">
             <div className="glass-effect rounded-2xl p-6 sm:p-8 border-primary-500/30 card-glow">
               <div className="flex items-start gap-4 mb-6">
@@ -127,41 +116,32 @@ export function AboutSection() {
                     Développeur passionné
                   </h3>
                   <p className="text-neutral-300 text-sm sm:text-base">
-                    Depuis mon premier "Hello World", je suis tombé amoureux du
-                    code.
+                    Depuis mon premier "Hello World", je suis tombé amoureux du code.
                   </p>
                 </div>
               </div>
 
               <p className="text-neutral-300 mb-4 text-sm sm:text-base">
-                En tant que développeur full-stack junior, je combine créativité
-                et rigueur technique pour créer des applications web modernes et
-                performantes. J'ai une appétence particulière pour le frontend
-                et l'expérience utilisateur, tout en maîtrisant les aspects
-                backend.
+                Développeur Fullstack avec une expérience concrète en environnement fintech,
+                j'ai contribué au développement et à la maintenance de plateformes de paiement
+                à fort volume transactionnel. Je comprends les enjeux de performance, de sécurité
+                applicative et d'intégrité des données financières — dans un secteur où chaque
+                ligne de code a un impact direct sur des milliers de transactions.
               </p>
-
-              {/* <p className="text-neutral-300 text-sm sm:text-base">
-                Mon objectif est de rejoindre une équipe dynamique où je pourrai
-                continuer à apprendre, contribuer à des projets ambitieux et
-                grandir en tant que développeur.
-              </p> */}
             </div>
 
             {/* Values */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              {values.map((value, index) => (
+              {values.map(({ title, description, Icon }) => (
                 <div
-                  key={index}
+                  key={title}
                   className="glass-effect rounded-xl p-4 sm:p-5 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10"
                 >
-                  <div className="text-2xl sm:text-3xl mb-2">{value.emoji}</div>
-                  <h5 className="text-neutral-50 mb-1 text-sm sm:text-base">
-                    {value.title}
-                  </h5>
-                  <p className="text-neutral-400 text-xs sm:text-sm">
-                    {value.description}
-                  </p>
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-primary-600/20 border border-primary-500/20 flex items-center justify-center mb-3">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
+                  </div>
+                  <h5 className="text-neutral-50 mb-1 text-sm sm:text-base">{title}</h5>
+                  <p className="text-neutral-400 text-xs sm:text-sm">{description}</p>
                 </div>
               ))}
             </div>
@@ -184,68 +164,37 @@ export function AboutSection() {
                     {/* Timeline dot */}
                     <div className="absolute left-0 top-0 -translate-x-[9px] w-4 h-4 rounded-full bg-linear-to-br from-primary-500 to-secondary-500 border-4 border-neutral-950 shadow-lg shadow-primary-500/50"></div>
 
-                    {/* Content */}
-                    <div className="glass-effect rounded-xl  p-5 sm:p-6 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-linear-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center border border-primary-500/20">
-                            <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
-                          </div>
-                          <div>
-                            <h4 className="text-neutral-50 text-base sm:text-lg">
-                              {item.title}
-                            </h4>
-                            <p className="">
-                              {item.company}
-                            </p>
-                            <p className="text-neutral-400 text-sm">
-                              {item.description}
-                            </p>
-                          </div>
+                    <div className="glass-effect rounded-xl p-5 sm:p-6 border-neutral-700/50 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-linear-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center border border-primary-500/20 shrink-0">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-400" />
+                        </div>
+                        <div className="min-w-0">
+                          <h4 className="text-neutral-50 text-base sm:text-lg leading-snug">
+                            {item.title}
+                          </h4>
+                          <p className="text-primary-400 text-sm">{item.company}</p>
                         </div>
                       </div>
-                      <span className="px-3 py-1 bg-linear-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg shrink-0 border border-primary-500/20 text-sm w-fit">
+
+                      {item.description.length > 0 && (
+                        <ul className="mb-3 space-y-1">
+                          {item.description.map((line, i) => (
+                            <li key={i} className="text-neutral-400 text-xs sm:text-sm flex gap-1.5 items-start">
+                              <span className="text-primary-500 mt-1 shrink-0">·</span>
+                              {line}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      <span className="inline-block px-3 py-1 bg-linear-to-r from-primary-600/20 to-secondary-600/20 text-primary-300 rounded-lg border border-primary-500/20 text-sm">
                         {item.year}
                       </span>
                     </div>
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div className="glass-effect rounded-2xl p-6 sm:p-8 border-neutral-700/50 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-br from-primary-600/20 to-secondary-600/20 rounded-full filter blur-3xl opacity-30"></div>
-
-          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 relative z-10">
-            <div className="text-center">
-              <Award className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-primary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
-                Certifications
-              </h4>
-              {/* <p className="text-neutral-400 text-sm sm:text-base">
-                Full-Stack Developer, JavaScript Algorithms
-              </p> */}
-            </div>
-            <div className="text-center">
-              <GraduationCap className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-secondary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
-                Formation
-              </h4>
-              {/* <p className="text-neutral-400 text-sm sm:text-base">
-                École du Code, Formation intensive 6 mois
-              </p> */}
-            </div>
-            <div className="text-center">
-              <Code className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 text-primary-400" />
-              <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
-                Projets Open Source
-              </h4>
-              {/* <p className="text-neutral-400 text-sm sm:text-base">
-                Contributions régulières sur GitHub
-              </p> */}
             </div>
           </div>
         </div>

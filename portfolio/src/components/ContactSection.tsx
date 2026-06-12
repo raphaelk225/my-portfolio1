@@ -6,7 +6,6 @@ import {
   Phone,
   Github,
   Linkedin,
-  Twitter,
   Sparkles,
   Loader2,
   Send,
@@ -18,11 +17,12 @@ import { toast } from "sonner@2.0.3";
 import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.current) return;
 
     setIsLoading(true);
     emailjs
@@ -39,13 +39,13 @@ export function ContactSection() {
             "Message envoyé avec succès ! Je vous répondrai bientôt.",
             { style: { background: "#16a34a", color: "#fff" } },
           );
-          form.current.reset();
+          form.current?.reset();
           setIsLoading(false);
         },
         (error) => {
           console.log(error.text);
           toast.error(
-            "Une erreur est survenue lors de l’envoi du message. Veuillez réessayer plus tard.",
+            "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
             { style: { background: "#dc2626", color: "#fff" } },
           );
           setIsLoading(false);
@@ -100,16 +100,13 @@ export function ContactSection() {
       id="contact"
       className="py-12 sm:py-16 md:py-20 bg-neutral-900 relative overflow-hidden"
     >
-      {/* Background decoration */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-secondary-600/10 rounded-full filter blur-3xl opacity-30"></div>
 
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-primary-400" />
-            <span className="text-neutral-200 text-sm sm:text-base">
-              Contact
-            </span>
+            <span className="text-neutral-200 text-sm sm:text-base">Contact</span>
           </div>
           <h2 className="text-neutral-50 mb-4">Discutons de votre projet</h2>
           <p className="text-neutral-400 max-w-2xl mx-auto text-sm sm:text-base">
@@ -121,7 +118,6 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-6xl mx-auto">
           {/* Left - Contact Info */}
           <div className="space-y-6 sm:space-y-8">
-            {/* Contact Cards */}
             <div className="space-y-4">
               {contactInfo.map((info, index) => {
                 const Icon = info.icon;
@@ -131,13 +127,11 @@ export function ContactSection() {
                     className="glass-effect rounded-xl p-5 sm:p-6 border-neutral-700/50 flex items-start gap-4 hover:border-primary-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10 animate-slide-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center flex-shrink-0 border border-primary-500/20">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-linear-to-br from-primary-600/20 to-secondary-600/20 flex items-center justify-center shrink-0 border border-primary-500/20">
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-400" />
                     </div>
                     <div>
-                      <div className="text-neutral-500 mb-1 text-sm">
-                        {info.label}
-                      </div>
+                      <div className="text-neutral-500 mb-1 text-sm">{info.label}</div>
                       {info.link ? (
                         <a
                           href={info.link}
@@ -146,9 +140,7 @@ export function ContactSection() {
                           {info.value}
                         </a>
                       ) : (
-                        <div className="text-neutral-100 text-sm sm:text-base">
-                          {info.value}
-                        </div>
+                        <div className="text-neutral-100 text-sm sm:text-base">{info.value}</div>
                       )}
                     </div>
                   </div>
@@ -188,23 +180,17 @@ export function ContactSection() {
               className="relative glass-effect rounded-xl p-5 sm:p-6 border-primary-500/30 overflow-hidden card-glow animate-slide-in"
               style={{ animationDelay: "0.4s" }}
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-600/30 to-secondary-600/30 rounded-full filter blur-2xl"></div>
-
+              <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-primary-600/30 to-secondary-600/30 rounded-full filter blur-2xl"></div>
               <div className="relative z-10">
-                <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">
-                  Disponibilité
-                </h4>
+                <h4 className="text-neutral-50 mb-2 text-base sm:text-lg">Disponibilité</h4>
                 <p className="text-neutral-300 mb-4 text-sm sm:text-base">
-                  Après des expériences en développement, notamment sur des
-                  solutions de paiement et des plateformes web, je suis
-                  actuellement disponible pour une nouvelle opportunité en
-                  développement Fullstack.{" "}
+                  Actuellement en poste chez FeexPay, je reste ouvert aux opportunités
+                  qui correspondent à mon profil — développement fullstack, APIs de paiement
+                  et solutions fintech.
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
-                  <span className="text-green-400 text-sm sm:text-base">
-                    Disponible immédiatement
-                  </span>
+                  <span className="text-green-400 text-sm sm:text-base">Disponible immédiatement</span>
                 </div>
               </div>
             </div>
@@ -219,16 +205,9 @@ export function ContactSection() {
               Envoyez-moi un message
             </h3>
 
-            <form
-              ref={form}
-              onSubmit={handleSubmit}
-              className="space-y-5 sm:space-y-6"
-            >
+            <form ref={form} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-neutral-300 mb-2 text-sm sm:text-base"
-                >
+                <label htmlFor="name" className="block text-neutral-300 mb-2 text-sm sm:text-base">
                   Nom complet
                 </label>
                 <Input
@@ -242,10 +221,7 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-neutral-300 mb-2 text-sm sm:text-base"
-                >
+                <label htmlFor="email" className="block text-neutral-300 mb-2 text-sm sm:text-base">
                   Email
                 </label>
                 <Input
@@ -259,14 +235,11 @@ export function ContactSection() {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-neutral-300 mb-2 text-sm sm:text-base"
-                >
+                <label htmlFor="title" className="block text-neutral-300 mb-2 text-sm sm:text-base">
                   Objet
                 </label>
                 <Input
-                  id="text"
+                  id="title"
                   type="text"
                   name="title"
                   placeholder="Ex: Demande de collaboration, Question technique..."
@@ -274,11 +247,9 @@ export function ContactSection() {
                   required
                 />
               </div>
+
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-neutral-300 mb-2 text-sm sm:text-base"
-                >
+                <label htmlFor="message" className="block text-neutral-300 mb-2 text-sm sm:text-base">
                   Message
                 </label>
                 <Textarea
@@ -294,7 +265,7 @@ export function ContactSection() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className=" w-full cursor-pointer bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
+                className="w-full cursor-pointer bg-linear-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
               >
                 {isLoading ? (
                   <>

@@ -1,18 +1,9 @@
-import { ArrowRight, Mail, Sparkles, Download } from "lucide-react";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
-
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import ImagePro from "../assets/photo-pro2.jpeg";
-import CV from "../assets/CV-KOUAMELAN_OTCHOUMOU_RAPHAEL-2.pdf";
 
 export function HeroSection() {
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = CV;
-    link.download = "CV-KOUAMELAN OTCHOUMOU RAPHAEL.pdf";
-    link.click();
-  };
-
   return (
     <section
       id="accueil"
@@ -32,7 +23,7 @@ export function HeroSection() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           {/* Right content - Photo */}
           <div
             className="relative flex justify-center order-1 animate-slide-in"
@@ -68,8 +59,9 @@ export function HeroSection() {
               </div>
             </div>
           </div>
+
           {/* Left content */}
-          <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1">
+          <div className="space-y-2 sm:space-y-4 text-center lg:text-left order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 glass-effect rounded-full border-primary-500/30 mx-auto lg:mx-0">
               <Sparkles className="w-4 h-4 text-primary-400" />
               <span className="text-neutral-200 text-sm sm:text-base">
@@ -85,68 +77,50 @@ export function HeroSection() {
               className="gradient-text animate-slide-in"
               style={{ animationDelay: "0.1s" }}
             >
-              Développeur Fullstack Junior
+              Développeur Fullstack Junior | Fintech & APIs de Paiement
             </h3>
 
             <p
               className="text-neutral-300 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base md:text-lg animate-slide-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Développeur Fullstack Junior (Next.js / React / NestJS) Spécialisé dans la
-              conception d’applications web et mobile performantes et
-              évolutives. Maîtrise du front-end et du back-end avec une approche
-              orientée résultats et qualité. Polyvalent en développement backend
-              (Node.js, Python, PHP selon les besoins des projets). Intégration
-              d’outils d’IA pour optimiser le développement et automatiser les
-              workflows. Créatif, rigoureux et autonome, j’apprends rapidement
-              et m’adapte facilement à des environnements dynamiques, tout en
-              livrant des fonctionnalités fiables.
+              Développeur Fullstack avec une expérience concrète en environnement fintech,
+              où j'ai contribué au développement de plateformes de paiement à fort volume
+              transactionnel. Spécialisé dans les APIs de paiement, Mobile Money et
+              l'intégration de solutions fintech en production réelle.
             </p>
-
-            <div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start animate-slide-in"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Button
-                onClick={handleDownloadCV}
-                className="bg-linear-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-lg group shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all text-sm sm:text-base"
-              >
-                Télécharger le CV
-                <Download className="w-4 h-4 ml-2" />
-              </Button>
-
-              <Button
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-                variant="outline"
-                className="rounded-lg border-neutral-700 hover:border-primary-500 hover:text-primary-400 glass-effect text-sm sm:text-base"
-              >
-                <Mail className="mr-2 w-4 h-4" />
-                Me contacter
-              </Button>
-            </div>
-
-            {/* Stats */}
-            {/* <div className="flex flex-wrap gap-4 sm:gap-8 pt-6 sm:pt-8 justify-center lg:justify-start animate-slide-in" style={{ animationDelay: '0.4s' }}>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl gradient-text">10+</div>
-                <div className="text-neutral-400 text-xs sm:text-sm">Projets réalisés</div>
-              </div>
-              <div className="h-12 w-px bg-neutral-800"></div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl gradient-text">6 mois</div>
-                <div className="text-neutral-400 text-xs sm:text-sm">D'expérience</div>
-              </div>
-              <div className="h-12 w-px bg-neutral-800"></div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl gradient-text">100%</div>
-                <div className="text-neutral-400 text-xs sm:text-sm">Satisfait</div>
-              </div>
-            </div> */}
           </div>
+        </div>
+
+        {/* Buttons */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-12 animate-slide-in"
+          style={{ animationDelay: "0.3s" }}
+        >
+          <Button
+            onClick={() =>
+              document
+                .getElementById("realisations")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="min-w-[200px] h-12 px-5 text-sm font-semibold bg-linear-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white rounded-xl shadow-lg shadow-primary-500/30 hover:shadow-primary-500/40 hover:-translate-y-0.5 transition-all whitespace-nowrap"
+          >
+            Voir mes réalisations
+            <ArrowRight className="w-4 h-4 ml-2 shrink-0" />
+          </Button>
+
+          <Button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            variant="outline"
+            className="min-w-[200px] h-12 px-5 text-sm font-semibold rounded-xl border-neutral-600 hover:border-primary-500 hover:text-primary-400 glass-effect hover:-translate-y-0.5 transition-all whitespace-nowrap"
+          >
+            <Mail className="mr-2 w-4 h-4 shrink-0" />
+            Me contacter
+          </Button>
         </div>
       </div>
     </section>
